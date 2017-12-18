@@ -97,9 +97,8 @@ $(
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
-      it("is loaded", function(done) {
+      it("is loaded", function() {
         expect($(".feed .entry").length).toBeGreaterThan(0);
-        done();
       });
       /* TODO: Write a new test suite named "New Feed Selection" */
       describe("New Feed Selection", function() {
@@ -113,10 +112,9 @@ $(
              * by the loadFeed function that the content actually changes.
              * Remember, loadFeed() is asynchronous.
              */
-        it("content changed", function(done) {
+        it("content changed", function() {
           var afterFeedContent = $(".feed").html();
           expect(afterFeedContent).not.toBe(beforeFeedContent);
-          done();
         });
 
         afterEach(function(done) {
